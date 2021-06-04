@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-5">
+    <%= form_with model: @country do |form| %>
+      <div>
+        <%= form.label :name,"Имя",class:"form-label",required:true %>
+        <%= form.text_field :name,class:"form-control"+" is-invalid"*@country.errors.full_messages_for(:name).length %>
+        <% puts @country.errors.full_messages_for(:name).each do |message| %>
+          <div class="invalid-feedback"><%= message %></div>
+        <% end %>
+      </div>
+      <br/>
+      <div>
+        <%= form.submit "Сохранить",class:"btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
