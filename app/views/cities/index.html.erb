@@ -1,0 +1,39 @@
+<ul class="list-group">
+  <% unless @region.nil? %>
+    <h3>Горда в регионе: <%= @region.name %></h3>
+    <br/>
+  <% end %>
+
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Название</th>
+      <th scope="col">Регион</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td><%= city.name %></td>
+        <td><%= city.region.name %></td>
+        <td class="table__actions">
+          <%= link_to edit_city_path(city),class:"btn btn-outline-warning" do %>
+            <i class="bi bi-pencil-fill"></i>
+          <% end %>
+          <%= link_to city_path(city),method: :delete,class:"btn btn-outline-danger" do %>
+            <i class="bi bi-trash-fill"></i>
+          <% end %>
+
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="3"><a class="btn btn-outline-success" href="<%= new_city_path %>"><i class="bi bi-plus"></i></a></td>
+    </tr>
+    </tfoot>
+  </table>
+
+</ul>
