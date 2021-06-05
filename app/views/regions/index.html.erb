@@ -1,0 +1,35 @@
+<ul class="list-group">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Название</th>
+      <th scope="col">Страна</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @regions.each do |region| %>
+      <tr>
+        <td><%= region.name %></td>
+        <td><%= region.country.name %></td>
+        <td class="table__actions">
+          <%= link_to edit_region_path(region),class:"btn btn-outline-warning" do %>
+            <i class="bi bi-pencil-fill"></i>
+          <% end %>
+          <%= link_to region_path(region),method: :delete,class:"btn btn-outline-danger" do %>
+            <i class="bi bi-trash-fill"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="3"><a class="btn btn-outline-success" href="<%= new_region_path %>">
+        <i class="bi bi-plus"></i></a>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+
+</ul>
