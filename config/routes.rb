@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     resources :regions
   end
 
-  resources :regions
+  resources :regions do
+    resources :cities
+  end
+
+  resources :cities
 
 
 end
