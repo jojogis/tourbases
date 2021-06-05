@@ -1,4 +1,8 @@
 <ul class="list-group">
+  <% unless @country.nil? %>
+    <h3>Регионы в стране: <%= @country.name %></h3>
+    <br/>
+  <% end %>
   <table class="table table-bordered">
     <thead>
     <tr>

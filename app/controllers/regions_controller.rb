@@ -4,7 +4,8 @@ class RegionsController < ApplicationController
     @regions = if params[:country_id].nil?
                  Region.all
                else
-                 Country.find(params[:country_id]).regions
+                 @country = Country.find(params[:country_id])
+                 @country.regions
                end
 
   end
