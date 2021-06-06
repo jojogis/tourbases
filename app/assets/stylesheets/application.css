@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+.table__actions{
+    width:320px;
+}
+.navbar{
+    margin-bottom:30px;
+}
