@@ -20,17 +20,17 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Просмотр</a>
+            <a class="nav-link active" aria-current="page" href="<%= view_tour_bases_path %>">Просмотр</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Редактирование
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/countries">Страны</a></li>
-              <li><a class="dropdown-item" href="/regions">Регионы</a></li>
-              <li><a class="dropdown-item" href="/cities">Города</a></li>
-              <li><a class="dropdown-item" href="/tourbases">Турбазы</a></li>
+              <li><a class="dropdown-item" href="<%= countries_path %>">Страны</a></li>
+              <li><a class="dropdown-item" href="<%= regions_path %>">Регионы</a></li>
+              <li><a class="dropdown-item" href="<%= cities_path %>">Города</a></li>
+              <li><a class="dropdown-item" href="<%= tour_bases_path %>">Турбазы</a></li>
             </ul>
           </li>
         </ul>
@@ -41,7 +41,7 @@
       </div>
     </div>
   </nav>
-    <div class="container">
+    <div class="container-fluid">
     <%= yield %>
     </div>
   </body>
