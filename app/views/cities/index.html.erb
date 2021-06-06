@@ -21,7 +21,7 @@
           <%= link_to edit_city_path(city),class:"btn btn-outline-warning" do %>
             <i class="bi bi-pencil-fill"></i>
           <% end %>
-          <%= link_to city_path(city),method: :delete,class:"btn btn-outline-danger" do %>
+          <%= link_to city_path(city),method: :delete,class:"btn btn-outline-danger",remote: true do %>
             <i class="bi bi-trash-fill"></i>
           <% end %>
           <%= link_to city_tour_bases_path(city),class:"btn btn-outline-primary" do %>
