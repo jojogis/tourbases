@@ -7,6 +7,10 @@
     <h3>Турбазы в городе: <%= @city.name %></h3>
     <br/>
   <% end %>
+  <% unless @country.nil? %>
+    <h3>Турбазы в стране: <%= @country.name %></h3>
+    <br/>
+  <% end %>
   <table class="table table-bordered">
     <thead>
     <tr>
