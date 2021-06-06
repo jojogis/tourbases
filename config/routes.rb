@@ -7,9 +7,14 @@ Rails.application.routes.draw do
 
   resources :regions do
     resources :cities
+    resources :tour_bases
   end
 
-  resources :cities
+  resources :cities do
+    resources :tour_bases
+  end
+
+  resources :tour_bases
 
 
 end
