@@ -60,3 +60,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker'
 
 gem 'turbolinks_render'
+
+gem 'faker'
+
+gem 'masonry-rails'
