@@ -2,11 +2,14 @@ class TourBasesController < ApplicationController
 
   def index
     @tour_bases = if !params[:region_id].nil?
-                    @region = Country.find(params[:country_id])
+                    @region = Region.find(params[:region_id])
                     @region.tour_base
                   elsif !params[:city_id].nil?
                     @city = City.find(params[:city_id])
                     @city.tour_base
+                  elsif !params[:country_id].nil?
+                    @country = Country.find(params[:country_id])
+                    @country.tour_base
                   else
                     TourBase.all
                   end
