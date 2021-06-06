@@ -10,7 +10,6 @@ class CitiesController < ApplicationController
   end
 
   def new
-    @region = Region.find(params[:region_id]) unless params[:region_id].nil?
     @city = City.new
   end
 

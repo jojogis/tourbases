@@ -11,7 +11,6 @@ class RegionsController < ApplicationController
   end
 
   def new
-    @country = Country.find(params[:country_id]) unless params[:country_id].nil?
     @region = Region.new
   end
 
@@ -47,6 +46,5 @@ class RegionsController < ApplicationController
 
   def region_params
     params.require(:region).permit(:name,:country_id)
-
   end
 end
