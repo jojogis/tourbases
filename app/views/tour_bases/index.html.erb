@@ -1,0 +1,51 @@
+<ul class="list-group">
+  <% unless @region.nil? %>
+    <h3>Турбазы в регионе: <%= @region.name %></h3>
+    <br/>
+  <% end %>
+  <% unless @city.nil? %>
+    <h3>Турбазы в городе: <%= @city.name %></h3>
+    <br/>
+  <% end %>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Название</th>
+      <th scope="col">Описание</th>
+      <th scope="col">Регион</th>
+      <th scope="col">Город</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @tour_bases.each do |tour_base| %>
+      <tr>
+        <td><%= tour_base.name %></td>
+        <td><%= tour_base.description %></td>
+        <td>
+          <%= link_to tour_base.region.name, edit_region_path(tour_base.region) %>
+        </td>
+        <td>
+          <%= tour_base.city.nil? ? "Вне города" : link_to(tour_base.city.name, edit_city_path(tour_base.city)) %>
+        </td>
+        <td class="table__actions">
+          <%= link_to edit_tour_basis_path(tour_base),class:"btn btn-outline-warning" do %>
+            <i class="bi bi-pencil-fill"></i>
+          <% end %>
+          <%= link_to tour_basis_path(tour_base),method: :delete,class:"btn btn-outline-danger",remote: true do %>
+            <i class="bi bi-trash-fill"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="5"><a class="btn btn-outline-success" href="<%= new_tour_basis_path %>">
+        <i class="bi bi-plus"></i></a>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+
+</ul>
