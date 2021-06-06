@@ -12,6 +12,7 @@
         <% @countries.each do |country| %>
           <%= link_to country.name, view_country_tour_bases_path(country),class:country==@country ? "link-dark" : "" %><br/>
         <% end %>
+        <%= link_to "Все страны", view_tour_bases_path,class:@country.nil? ? "link-dark" : "" %><br/>
       </div>
     </div>
   </div>
