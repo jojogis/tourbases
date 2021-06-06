@@ -1,0 +1,39 @@
+
+<div class="row">
+  <div class="col-md-3 p-3">
+    <div class="shadow bg-body rounded p-3">
+      <%= render "filters" %>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <% if !@city.nil? %>
+      <h3>Турбазы в городе: <%= @city.name %></h3>
+      <br/>
+    <% elsif !@region.nil? %>
+      <h3>Турбазы в регионе: <%= @region.name %></h3>
+      <br/>
+    <% elsif !@country.nil? %>
+      <h3>Турбазы в стране: <%= @country.name %></h3>
+      <br/>
+    <% end %>
+    <div class="row masonry-grid">
+      <% if @tour_bases.length == 0 %>
+        <h4>Турбаз нет</h4>
+      <% else %>
+        <% @tour_bases.each do |tour_base| %>
+          <div class="col-md-4 p-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= tour_base.name %></h5>
+                <p class="card-text"><%= tour_base.description %></p>
+                <%= link_to tour_base.region.name, view_country_region_tour_bases_path(tour_base.region.country,tour_base.region),class: "card-link" %>
+                <%= tour_base.city.nil? ? "" : link_to(tour_base.city.name,
+                                                       view_country_region_city_tour_bases_path(tour_base.city.region.country,tour_base.city.region,tour_base.city),class: "card-link") %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
