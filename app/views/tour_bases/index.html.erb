@@ -1,4 +1,3 @@
-<ul class="list-group">
   <% unless @region.nil? %>
     <h3>Турбазы в регионе: <%= @region.name %></h3>
     <br/>
@@ -32,7 +31,7 @@
         <td>
           <%= tour_base.city.nil? ? "Вне города" : link_to(tour_base.city.name, edit_city_path(tour_base.city)) %>
         </td>
-        <td class="table__actions">
+        <td>
           <%= link_to edit_tour_basis_path(tour_base),class:"btn btn-outline-warning" do %>
             <i class="bi bi-pencil-fill"></i>
           <% end %>
@@ -52,4 +51,4 @@
     </tfoot>
   </table>
 
-</ul>
+
