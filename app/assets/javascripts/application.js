@@ -13,4 +13,19 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
+//= require masonry/masonry.min
 //= require_tree .
+
+
+
+$(function(){
+    $(document).on("turbolinks:load",function(){
+        new Masonry( document.getElementsByClassName("masonry-grid")[0], {
+            itemSelector: '.col-md-4',
+        });
+    })
+    new Masonry( document.getElementsByClassName("masonry-grid")[0], {
+        itemSelector: '.col-md-4',
+    });
+})
