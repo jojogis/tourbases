@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :countries do
     resources :regions
+    resources :tour_bases
   end
 
   resources :regions do
