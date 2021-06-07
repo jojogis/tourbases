@@ -2,6 +2,13 @@ class CountriesController < ApplicationController
 
   def index
     @countries = Country.all
+    @countries.each do |country|
+      next if country.regions.length.zero?
+
+      regions_list = country.regions.reduce('') { |list, r| "#{list}#{r.name}, " }
+      regions_list.chomp!(', ')
+      country.delete_confirm = "Будут удалены следующие регионы: #{regions_list}"
+    end
   end
 
   def new

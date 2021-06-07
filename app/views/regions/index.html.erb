@@ -20,7 +20,7 @@
           <%= link_to edit_region_path(region),class:"btn btn-outline-warning" do %>
             <i class="bi bi-pencil-fill"></i>
           <% end %>
-          <%= link_to region_path(region),method: :delete,class:"btn btn-outline-danger",remote: true do %>
+          <%= link_to region_path(region),method: :delete,class:"btn btn-outline-danger",remote: true,data: {confirm: "Вы уверены? #{region.delete_confirm}"} do %>
             <i class="bi bi-trash-fill"></i>
           <% end %>
           <%= link_to region_cities_path(region),class:"btn btn-outline-primary" do %>

@@ -32,10 +32,10 @@
           <%= tour_base.city.nil? ? "Вне города" : link_to(tour_base.city.name, edit_city_path(tour_base.city)) %>
         </td>
         <td>
-          <%= link_to edit_tour_basis_path(tour_base),class:"btn btn-outline-warning" do %>
+          <%= link_to edit_tour_basis_path(tour_base), class:"btn btn-outline-warning" do %>
             <i class="bi bi-pencil-fill"></i>
           <% end %>
-          <%= link_to tour_basis_path(tour_base),method: :delete,class:"btn btn-outline-danger",remote: true do %>
+          <%= link_to tour_basis_path(tour_base), method: :delete, class:"btn btn-outline-danger", remote: true, data: {confirm: "Вы уверены?"} do %>
             <i class="bi bi-trash-fill"></i>
           <% end %>
         </td>

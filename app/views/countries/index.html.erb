@@ -14,7 +14,7 @@
         <%= link_to edit_country_path(country),class:"btn btn-outline-warning" do %>
           <i class="bi bi-pencil-fill"></i>
         <% end %>
-        <%= link_to country_path(country),method: :delete,class:"btn btn-outline-danger",remote: true do %>
+        <%= link_to country_path(country),method: :delete,class:"btn btn-outline-danger",data: {confirm: "Вы уверены? #{country.delete_confirm}"}, remote: true do %>
           <i class="bi bi-trash-fill"></i>
         <% end %>
         <%= link_to country_regions_path(country),class:"btn btn-outline-primary" do %>

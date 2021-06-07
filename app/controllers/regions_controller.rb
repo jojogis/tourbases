@@ -7,6 +7,13 @@ class RegionsController < ApplicationController
                  @country = Country.find(params[:country_id])
                  @country.regions
                end
+    @regions.each do |region|
+      next if region.cities.length.zero?
+
+      cities_list = region.cities.reduce('') { |list, c| "#{list}#{c.name}, " }
+      cities_list.chomp!(', ')
+      region.delete_confirm = "Будут удалены следующие города: #{cities_list}"
+    end
 
   end
 

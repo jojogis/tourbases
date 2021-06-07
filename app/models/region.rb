@@ -4,4 +4,5 @@ class Region < ApplicationRecord
   validates :name, presence: true, length: { minimum: 2 }
   belongs_to :country
   accepts_nested_attributes_for :cities, :tour_base
+  attr_accessor :delete_confirm
 end
