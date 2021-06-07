@@ -38,7 +38,7 @@ class CitiesController < ApplicationController
   def destroy
     @city = City.find(params[:id])
     @city.destroy
-    redirect_to action: :index
+    redirect_back fallback_location: :index
   end
 
   private

@@ -39,7 +39,7 @@ class RegionsController < ApplicationController
   def destroy
     @region = Region.find(params[:id])
     @region.destroy
-    redirect_to action: :index
+    redirect_back fallback_location: :index
   end
 
   private
