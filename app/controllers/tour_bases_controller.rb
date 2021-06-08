@@ -44,7 +44,7 @@ class TourBasesController < ApplicationController
   def destroy
     @tour_base = TourBase.find(params[:id])
     @tour_base.destroy
-    redirect_back fallback_location: :index
+    redirect_back fallback_location: tour_bases_path
   end
 
   private

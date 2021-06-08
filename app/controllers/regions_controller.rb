@@ -46,12 +46,12 @@ class RegionsController < ApplicationController
   def destroy
     @region = Region.find(params[:id])
     @region.destroy
-    redirect_back fallback_location: :index
+    redirect_back fallback_location: regions_path
   end
 
   private
 
   def region_params
-    params.require(:region).permit(:name,:country_id)
+    params.require(:region).permit(:name, :country_id)
   end
 end
