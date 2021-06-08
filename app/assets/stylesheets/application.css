@@ -19,3 +19,6 @@
 .navbar{
     margin-bottom:30px;
 }
+body{
+    overflow-x: hidden;
+}
