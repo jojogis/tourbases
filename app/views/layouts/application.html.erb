@@ -9,6 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
@@ -37,7 +38,7 @@
       </div>
     </div>
   </nav>
-    <div class="container-fluid p-5">
+    <div class="container-fluid p-xs-5">
     <%= yield %>
     </div>
   </body>

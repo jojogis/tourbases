@@ -22,3 +22,9 @@
 body{
     overflow-x: hidden;
 }
+.table-wrapper{
+    overflow-x: auto;
+}
+.table{
+    min-width:800px;
+}
